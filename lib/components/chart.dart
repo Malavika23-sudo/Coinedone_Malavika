@@ -4,8 +4,10 @@ import 'package:pie_chart/pie_chart.dart';
 enum LegendShape { Circle, Rectangle }
 
 class chart extends StatelessWidget {
+  var totalTime;
+  chart({this.totalTime});
   final dataMap = <String, double>{
-    "class": 9,
+    "class:": 9,
     "Study": 1,
     "Free Time": 1.2,
   };
@@ -17,7 +19,7 @@ class chart extends StatelessWidget {
   ChartType? _chartType = ChartType.ring;
   bool _showCenterText = true;
   double? _ringStrokeWidth = 7.5;
-  double? _chartLegendSpacing = 32;
+  double? _chartLegendSpacing = 50;
 
   bool _showLegendsInRow = true;
   bool _showLegends = true;
@@ -39,12 +41,12 @@ class chart extends StatelessWidget {
       animationDuration: Duration(milliseconds: 800),
       chartLegendSpacing: _chartLegendSpacing!,
       chartRadius: MediaQuery.of(context).size.width / 3.2 > 300
-          ? 10
-          : MediaQuery.of(context).size.width / 3.2,
+          ? 300
+          : MediaQuery.of(context).size.width / 3,
       colorList: colorList,
       initialAngleInDegree: 0,
       chartType: _chartType!,
-      centerText: _showCenterText ? "Total" : null,
+      centerText: _showCenterText ? "Total: $totalTime min" : null,
       legendOptions: LegendOptions(
         showLegendsInRow: _showLegendsInRow,
         legendPosition: _legendPosition!,

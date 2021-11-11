@@ -1,3 +1,4 @@
+import 'package:coinedone_machien_test/models/time_data_model.dart';
 import 'package:coinedone_machien_test/screens/dashboard_screen.dart';
 import 'package:coinedone_machien_test/services/network.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,7 +11,6 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-
   @override
   void initState() {
     super.initState();
